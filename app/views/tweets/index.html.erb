@@ -1,11 +1,11 @@
 
 <h1>Search tweets from user</h1>
-<%= form_tag "tweets", method: "get", remote: true do %>
+<%= form_tag "tweets", method: "get" do %>
   <%= text_field_tag :user_name, params[:user_name], placeholder: "Search User" %>
   <%= submit_tag "Search" %>
 <% end %>
 
-<ul>
+<ul id="tweets">
     <% @tweets.each do |tweet| %>
       <%= render partial: "tweet", locals: {tweet: tweet}%>
     <% end %>

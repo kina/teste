@@ -1,7 +1,6 @@
 class TweetsController < ApplicationController
-#before_action :authenticate_user!
+before_action :authenticate_user!
 
-  # GET /tweets
   def index
     @tweets = []
     if params[:user_name]
@@ -11,6 +10,5 @@ class TweetsController < ApplicationController
         flash.now[:error] = e.message
       end
     end
-    @tweets
   end
 end
