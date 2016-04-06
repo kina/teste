@@ -7,7 +7,7 @@ default: &default
   reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
   timeout: 5000
 
-development:
+development: &development
   adapter: sqlite3
   pool: 5
   timeout: 5000
@@ -17,8 +17,8 @@ development:
 
 
 test:
-  <<: *default
-  database: twitter_test_test
+  <<: *development
+  database: db/test.sqlite3
 
 production: &deploy
   encoding: utf8
