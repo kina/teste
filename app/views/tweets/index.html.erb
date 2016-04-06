@@ -1,7 +1,7 @@
 
 <h1>Search tweets from user</h1>
 <%= form_tag "tweets", method: "get" do %>
-  <%= text_field_tag :user_name, params[:user_name], placeholder: "Search User" %>
+  <%= text_field_tag :user_name, params[:user_name], placeholder: "Search User", autofocus: "autofocus" %>
   <%= submit_tag "Search" %>
 <% end %>
 
@@ -13,3 +13,4 @@
 
 <br>
 
+<%=link_to "Logout", destroy_user_session_path, method: :delete %>
