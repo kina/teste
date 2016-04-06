@@ -4,7 +4,7 @@ ruby "2.3.0"
 
 gem "autoprefixer-rails"
 gem "bourbon", "5.0.0.beta.3"
-gem "draper"
+gem "devise"
 gem "flutie"
 gem "high_voltage"
 gem "honeybadger"
