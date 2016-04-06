@@ -22,6 +22,7 @@ gem "simple_form"
 gem "sprockets", ">= 3.0.0"
 gem "sprockets-es6"
 gem "title"
+gem "twitter"
 gem "uglifier"
 
 group :development do
