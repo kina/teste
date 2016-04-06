@@ -1,7 +1,8 @@
 
 <h1>Search tweets from user</h1>
-<%= form_tag "Tweet", method: "get", remote: true do %>
-
+<%= form_tag "tweets", method: "get", remote: true do %>
+  <%= text_field_tag :user_name, params[:user_name], placeholder: "Search User" %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 <ul>
