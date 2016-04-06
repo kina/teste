@@ -1,19 +1,16 @@
 class TweetsController < ApplicationController
+#before_action :authenticate_user!
 
   # GET /tweets
   def index
     @tweets = []
-
-    respond_to do |format|
-      format.html
+    if params[:user_name]
+      begin
+        @tweets = TwitterService.new.user_timeline(params[:user_name])
+      rescue Exception => e
+        flash.now[:error] = e.message
+      end
     end
+    @tweets
   end
-
-
-
-  private
-    # Only allow a trusted parameter "white list" through.
-    def tweet_params
-      params[:tweet]
-    end
 end
